@@ -1,11 +1,15 @@
-@import '../../../node_modules/react-md/src/scss/react-md';
-@include react-md-everything;
+// Theme
+@import './theme/colors';
+@import './theme/themes';
+@import './utils/themeUtil';
 
+// Sitewide
+@import './utils/breakpoints';
+@import './utils/typography';
 @import './normalize';
 @import './grid';
-@import './typography';
 
-@import './components/nav';
-@import './components/sidebar';
-
-@import './pages/homepage';
+// Components
+@import '../../components/Header/header';
+@import '../../components/Drawer/drawer';
+@import '../../components/Lang/lang';

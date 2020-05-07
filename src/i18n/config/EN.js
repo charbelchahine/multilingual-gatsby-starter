@@ -1,12 +1,14 @@
-var home = require('../EN/home')
-var e404 = require('../EN/e404')
-var contact = require('../EN/contact')
+const home = require('../EN/home');
+const e404 = require('../EN/e404');
+const projects = require('../EN/projects');
+const contact = require('../EN/contact');
 
 module.exports = {
-	key: 'en',
-	path: '',
-	name: 'En',
-	home,
-	e404,
-	contact,
-}
+    key: 'en',
+    path: '',
+    name: 'EN',
+    home,
+    e404,
+    projects,
+    contact,
+};

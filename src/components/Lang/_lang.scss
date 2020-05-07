@@ -1,0 +1,7 @@
+.langSelectorOptions {
+    .langSelectorItem:hover,
+    .langSelectorItem:focus {
+        color: $lightLink;
+        background-color: $lightFocus;
+    }
+}

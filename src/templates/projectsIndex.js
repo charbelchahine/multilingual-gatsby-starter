@@ -1,56 +1,76 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import T from 'i18n-react'
-import Layout from '../components/layout'
-import Helmet from 'react-helmet'
-import Img from 'gatsby-image'
-import Link from '../components/link'
-import slugify from 'slugify'
+import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import T from 'i18n-react';
+import Helmet from 'react-helmet';
+import Img from 'gatsby-image';
+import slugify from 'slugify';
 
-export default ({
-	pageContext: { lang, html, title },
-	location: { pathname },
-	data
-}) => (
-	<Layout path={pathname}>
-		{T.setTexts(lang)}
-		<Helmet title={title} />
-		{data.allMarkdownRemark.edges
-        .map(({node}) => (
-            <div>
-                <Img fixed={node.frontmatter.image.childImageSharp.fixed}/>
-                <Link to={"/" + slugify(node.frontmatter.title)}>{node.frontmatter.title}</Link>
+import Link from '../components/Link/link';
+import Layout from '../components/Layout/layout';
+
+const edges = data => {
+    return data.allMarkdownRemark.edges;
+};
+
+const ProjectIndex = ({ pageContext: { lang, title }, location: { pathname }, data }) => (
+    <Layout path={pathname}>
+        {T.setTexts(lang)}
+        <Helmet title={title} />
+        {edges(data).map(({ node }) => (
+            <div key={node.frontmatter.title}>
+                <Img fluid={node.frontmatter.image.childImageSharp.fluid} />
+                <Link to={`/${slugify(node.frontmatter.title)}`}>{node.frontmatter.title}</Link>
                 <p>{node.frontmatter.key}</p>
             </div>
-            )
-        )}
-	</Layout>
-)
+        ))}
+    </Layout>
+);
 
 export const query = graphql`
     fragment fixedProjectImage on File {
         childImageSharp {
-            fixed(width: 1400, height: 555, quality: 100) {
-                ...GatsbyImageSharpFixed_withWebp
+            fluid(maxWidth: 1400, maxHeight: 555, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
             }
         }
     }
-	query AllMarkdown($key: String) {
-        allMarkdownRemark (
-            sort: {order: DESC, fields: [frontmatter___date]}, 
-            filter: {frontmatter: {key: {in: [$key]}}}) {
-                edges {
-                    node {
-                        frontmatter {
-                            title
-                            key
-                            date
-                            image {
-                                ...fixedProjectImage
-                            }
+    query AllMarkdown($key: String) {
+        allMarkdownRemark(
+            sort: { order: DESC, fields: [frontmatter___date] }
+            filter: { frontmatter: { key: { in: [$key] } } }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        title
+                        key
+                        date
+                        image {
+                            ...fixedProjectImage
                         }
                     }
                 }
-          }
-	}
-`
+            }
+        }
+    }
+`;
+
+ProjectIndex.propTypes = {
+    pageContext: PropTypes.shape({
+        lang: PropTypes.shape({}),
+        title: PropTypes.string,
+    }),
+    location: PropTypes.shape({
+        pathname: PropTypes.string,
+    }),
+    data: PropTypes.shape({}),
+};
+
+ProjectIndex.defaultProps = {
+    pageContext: {},
+    location: {},
+    data: {},
+};
+
+export default ProjectIndex;

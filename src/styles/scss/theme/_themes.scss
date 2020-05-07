@@ -1,0 +1,12 @@
+$themes: (
+    light: (
+        backgroundColor: $lightBackground,
+        linkColor: $lightLink,
+        linkFocus: $lightFocus,
+    ),
+    dark: (
+        backgroundColor: $darkBackground,
+        linkColor: $darkLink,
+        linkFocus: $darkFocus,
+    ),
+);
