@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
+
+$thin: 100;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$black: 900;
+
+%font-size-14 {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+// Import fonts from /static/fonts folder
+@mixin font-weight($name, $weight: '') {
+    $space-weight: ' ' + $weight;
+    $dash-weight: '-' + $weight;
+
+    @if $weight== '' {
+        $space-weight: '';
+        $dash-weight: '';
+    }
+    @font-face {
+        font-family: unquote($name) + $space-weight;
+        font-display: swap;
+        src: url('/../../fonts/'+$name+$dash-weight+'.woff2') format('woff2'),
+            url('/../../fonts/'+$name+$dash-weight+'.woff') format('woff'),
+            url('/../../fonts/'+$name+$dash-weight+'.ttf') format('truetype');
+    }
+}
+@mixin font($name) {
+    @include font-weight($name);
+    @include font-weight($name, 'black');
+    @include font-weight($name, 'bold');
+    @include font-weight($name, 'light');
+    @include font-weight($name, 'thin');
+}
+
+// Include your fonts here
+@include font('awconqueror');
+@include font('postgrotesk');

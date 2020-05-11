@@ -13,3 +13,6 @@ yarn-error.log
 .sass-cache*
 **.css.map
 *.css.map
+
+# Jest Coverage
+coverage

@@ -1,0 +1,18 @@
+body {
+    overflow-x: hidden;
+    position: relative;
+    @include themed {
+        background-color: t(backgroundColor);
+    }
+}
+
+#___gatsby {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}

@@ -1,7 +1,7 @@
-var dictEN = require('./EN')
-var dictFR = require('./FR')
+const dictEN = require('./EN');
+const dictFR = require('./FR');
 
 module.exports = {
-	en: dictEN,
-	fr: dictFR,
-}
+    en: dictEN,
+    fr: dictFR,
+};

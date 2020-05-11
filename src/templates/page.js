@@ -1,15 +1,33 @@
-import React from 'react'
-import T from 'i18n-react'
-import Layout from '../components/layout'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import T from 'i18n-react';
+import Layout from '../components/Layout/layout';
 
-export default ({
-	pageContext: { lang, html, title },
-	location: { pathname }
-}) => (
-	<Layout path={pathname}>
-		{T.setTexts(lang)}
-		<Helmet title={title} />
-		<div dangerouslySetInnerHTML={{ __html: html }} />
-	</Layout>
-)
+const seo = {
+    title: 'Mountain Central',
+    description: 'That is a Gatsby Site hosted on Netlify',
+    className: 'mountaincentralPage',
+};
+
+const Page = ({ pageContext: { lang }, location: { pathname } }) => (
+    <Layout path={pathname} seo={seo}>
+        {T.setTexts(lang)}
+        <div className="testDiv" />
+    </Layout>
+);
+
+Page.propTypes = {
+    pageContext: PropTypes.shape({
+        lang: PropTypes.shape({}),
+    }),
+    location: PropTypes.shape({
+        pathname: PropTypes.string,
+    }),
+};
+
+Page.defaultProps = {
+    pageContext: {},
+    location: {},
+};
+
+export default Page;

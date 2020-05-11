@@ -1,0 +1,23 @@
+.drawer {
+    width: 300px;
+    @include themed {
+        color: t(linkColor);
+        background-color: t(backgroundColor);
+    }
+    .drawerContents {
+        display: flex;
+        padding: 50px;
+        flex-direction: column;
+        .navLink {
+            display: flex;
+            color: inherit;
+            font-size: 27px;
+            line-height: 30px;
+            margin-bottom: 50px;
+            text-decoration: none;
+            svg {
+                margin-right: 20px;
+            }
+        }
+    }
+}
