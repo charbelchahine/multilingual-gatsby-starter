@@ -12,6 +12,8 @@ $black: 900;
     line-height: 16px;
 }
 
+$roboto: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+
 // Import fonts from /static/fonts folder
 @mixin font-weight($name, $weight: '') {
     $space-weight: ' ' + $weight;
@@ -37,6 +39,5 @@ $black: 900;
     @include font-weight($name, 'thin');
 }
 
-// Include your fonts here
-@include font('awconqueror');
-@include font('postgrotesk');
+// Include your fonts here, i.e.:
+// @include font('awconqueror');

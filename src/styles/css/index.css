@@ -1,44 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap");
-@font-face {
-  font-family: awconqueror;
-  font-display: swap;
-  src: url("/../../fonts/awconqueror.woff2") format("woff2"), url("/../../fonts/awconqueror.woff") format("woff"), url("/../../fonts/awconqueror.ttf") format("truetype"); }
-@font-face {
-  font-family: awconqueror black;
-  font-display: swap;
-  src: url("/../../fonts/awconqueror-black.woff2") format("woff2"), url("/../../fonts/awconqueror-black.woff") format("woff"), url("/../../fonts/awconqueror-black.ttf") format("truetype"); }
-@font-face {
-  font-family: awconqueror bold;
-  font-display: swap;
-  src: url("/../../fonts/awconqueror-bold.woff2") format("woff2"), url("/../../fonts/awconqueror-bold.woff") format("woff"), url("/../../fonts/awconqueror-bold.ttf") format("truetype"); }
-@font-face {
-  font-family: awconqueror light;
-  font-display: swap;
-  src: url("/../../fonts/awconqueror-light.woff2") format("woff2"), url("/../../fonts/awconqueror-light.woff") format("woff"), url("/../../fonts/awconqueror-light.ttf") format("truetype"); }
-@font-face {
-  font-family: awconqueror thin;
-  font-display: swap;
-  src: url("/../../fonts/awconqueror-thin.woff2") format("woff2"), url("/../../fonts/awconqueror-thin.woff") format("woff"), url("/../../fonts/awconqueror-thin.ttf") format("truetype"); }
-@font-face {
-  font-family: postgrotesk;
-  font-display: swap;
-  src: url("/../../fonts/postgrotesk.woff2") format("woff2"), url("/../../fonts/postgrotesk.woff") format("woff"), url("/../../fonts/postgrotesk.ttf") format("truetype"); }
-@font-face {
-  font-family: postgrotesk black;
-  font-display: swap;
-  src: url("/../../fonts/postgrotesk-black.woff2") format("woff2"), url("/../../fonts/postgrotesk-black.woff") format("woff"), url("/../../fonts/postgrotesk-black.ttf") format("truetype"); }
-@font-face {
-  font-family: postgrotesk bold;
-  font-display: swap;
-  src: url("/../../fonts/postgrotesk-bold.woff2") format("woff2"), url("/../../fonts/postgrotesk-bold.woff") format("woff"), url("/../../fonts/postgrotesk-bold.ttf") format("truetype"); }
-@font-face {
-  font-family: postgrotesk light;
-  font-display: swap;
-  src: url("/../../fonts/postgrotesk-light.woff2") format("woff2"), url("/../../fonts/postgrotesk-light.woff") format("woff"), url("/../../fonts/postgrotesk-light.ttf") format("truetype"); }
-@font-face {
-  font-family: postgrotesk thin;
-  font-display: swap;
-  src: url("/../../fonts/postgrotesk-thin.woff2") format("woff2"), url("/../../fonts/postgrotesk-thin.woff") format("woff"), url("/../../fonts/postgrotesk-thin.ttf") format("truetype"); }
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -340,24 +300,26 @@ template {
 
 body {
   overflow-x: hidden;
-  position: relative; }
-  body.light-mode {
-    background-color: #ffffff; }
-  .light-mode body {
-    background-color: #ffffff; }
-  body.dark-mode {
-    background-color: #000000; }
-  .dark-mode body {
-    background-color: #000000; }
-
-#___gatsby {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   max-width: 1400px;
   margin: 0 auto; }
+  body.light-mode {
+    color: #000000;
+    background-color: #ffffff; }
+  .light-mode body {
+    color: #000000;
+    background-color: #ffffff; }
+  body.dark-mode {
+    color: #ffffff;
+    background-color: #000000; }
+  .dark-mode body {
+    color: #ffffff;
+    background-color: #000000; }
 
 .content {
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%; }
+  padding: 0 30px; }
 
 header {
   display: flex;
@@ -375,6 +337,7 @@ header {
 nav {
   width: 100%;
   display: flex;
+  margin: 20px 0;
   align-items: center; }
   nav .navLHS {
     flex: 1;
@@ -384,6 +347,14 @@ nav {
     flex: 1;
     display: flex;
     justify-content: flex-end; }
+  nav .navLogo.light-mode {
+    color: #000000; }
+  .light-mode nav .navLogo {
+    color: #000000; }
+  nav .navLogo.dark-mode {
+    color: #ffffff; }
+  .dark-mode nav .navLogo {
+    color: #ffffff; }
   nav .navIconButton:hover.light-mode {
     background-color: rgba(36, 12, 109, 0.2); }
   .light-mode nav .navIconButton:hover {
@@ -438,5 +409,54 @@ nav {
 .langSelectorOptions .langSelectorItem:focus {
   color: #000000;
   background-color: rgba(36, 12, 109, 0.2); }
+
+.projectGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.projectCard {
+  max-width: 500px;
+  width: 100%;
+  margin: 20px; }
+  .projectCard.light-mode {
+    color: #000000;
+    border-color: #000000; }
+  .light-mode .projectCard {
+    color: #000000;
+    border-color: #000000; }
+  .projectCard.dark-mode {
+    color: #ffffff;
+    border-color: #ffffff; }
+  .dark-mode .projectCard {
+    color: #ffffff;
+    border-color: #ffffff; }
+
+.contactForm {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column; }
+  .contactForm .contactFormInput {
+    margin: 20px auto; }
+    .contactForm .contactFormInput.light-mode {
+      color: #000000;
+      border-color: #000000; }
+    .light-mode .contactForm .contactFormInput {
+      color: #000000;
+      border-color: #000000; }
+    .contactForm .contactFormInput.dark-mode {
+      color: #ffffff;
+      border-color: #ffffff; }
+    .dark-mode .contactForm .contactFormInput {
+      color: #ffffff;
+      border-color: #ffffff; }
+    .contactForm .contactFormInput label.light-mode {
+      color: #000000; }
+    .light-mode .contactForm .contactFormInput label {
+      color: #000000; }
+    .contactForm .contactFormInput label.dark-mode {
+      color: #ffffff; }
+    .dark-mode .contactForm .contactFormInput label {
+      color: #ffffff; }
 
 /*# sourceMappingURL=index.css.map */

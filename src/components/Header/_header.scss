@@ -10,6 +10,7 @@ header {
 nav {
     width: 100%;
     display: flex;
+    margin: 20px 0;
     align-items: center;
     .navLHS {
         flex: 1;
@@ -20,6 +21,11 @@ nav {
         flex: 1;
         display: flex;
         justify-content: flex-end;
+    }
+    .navLogo {
+        @include themed {
+            color: t(linkColor);
+        }
     }
     .navIconButton:hover {
         @include themed {

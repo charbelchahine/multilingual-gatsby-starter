@@ -1,18 +1,16 @@
 body {
     overflow-x: hidden;
-    position: relative;
-    @include themed {
-        background-color: t(backgroundColor);
-    }
-}
-
-#___gatsby {
+    font-family: $roboto;
     max-width: 1400px;
     margin: 0 auto;
+    @include themed {
+        color: t(linkColor);
+        background-color: t(backgroundColor);
+    }
 }
 
 .content {
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
+    padding: 0 30px;
 }
