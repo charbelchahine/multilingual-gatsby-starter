@@ -18,7 +18,7 @@ This is a gatsby starter, it supports multiple languages, NetlifyCMS, styling wi
 ## Built With
 
 -   [GatsbyJS](https://www.gatsbyjs.org) - to obtain static/offline Progressive Web App
--   [NetlifyCMS](https://www.netlifycms.org) - to obtain blog posts from markdown files.
+-   [NetlifyCMS](https://www.netlifycms.org) - to obtain blog posts from markdown files & form submissions.
 -   [react-i18next](https://react.i18next.com/) - Internationalization to obtain multilingual site
 -   [Sass](https://sass-lang.com) - for styling
 -   [Material-UI](https://material-ui.com) - React components based on Material Design
@@ -91,7 +91,7 @@ In `/static/admin/confiq.yml`, the CMS can be configured. Right now, blog posts 
 
 | Audits              | Score |
 | ------------------- | ----: |
-| Performance         |   98% |
+| Performance         |   99% |
 | Progressive Web App |  100% |
 | Accessibility       |  100% |
 | Best Practices      |  100% |

@@ -5,6 +5,7 @@ import T from 'i18n-react';
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 import slugify from 'slugify';
+import { Card, CardContent } from '@material-ui/core';
 
 import Link from '../components/Link/link';
 import Layout from '../components/Layout/layout';
@@ -17,20 +18,26 @@ const ProjectIndex = ({ pageContext: { lang, title }, location: { pathname }, da
     <Layout path={pathname}>
         {T.setTexts(lang)}
         <Helmet title={title} />
-        {edges(data).map(({ node }) => (
-            <div key={node.frontmatter.title}>
-                <Img fluid={node.frontmatter.image.childImageSharp.fluid} />
-                <Link to={`/${slugify(node.frontmatter.title)}`}>{node.frontmatter.title}</Link>
-                <p>{node.frontmatter.key}</p>
-            </div>
-        ))}
+        <div className="projectGrid">
+            {edges(data).map(({ node }) => (
+                <Card key={node.frontmatter.title} className="projectCard">
+                    <Img fluid={node.frontmatter.image.childImageSharp.fluid} />
+                    <CardContent>
+                        <Link to={`/${slugify(node.frontmatter.title)}`}>
+                            {node.frontmatter.title}
+                        </Link>
+                        <p>{node.frontmatter.key}</p>
+                    </CardContent>
+                </Card>
+            ))}
+        </div>
     </Layout>
 );
 
 export const query = graphql`
     fragment fixedProjectImage on File {
         childImageSharp {
-            fluid(maxWidth: 1400, maxHeight: 555, quality: 100) {
+            fluid(maxWidth: 500, maxHeight: 198, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
             }
         }

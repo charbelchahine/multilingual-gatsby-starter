@@ -59,6 +59,7 @@ class Lang extends Component {
                 <Menu
                     keepMounted
                     id="lang-selector"
+                    disableAutoFocusItem
                     anchorEl={anchorEl}
                     open={Boolean(anchorEl)}
                     getContentAnchorEl={null}
