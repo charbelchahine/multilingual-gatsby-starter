@@ -11,9 +11,10 @@
 
 // Components
 @import '../../components/Header/header';
+@import '../../components/footer/footer';
 @import '../../components/Drawer/drawer';
-@import '../../components/Lang/lang';
+@import '../../components/LanguagePicker/languagePicker';
 
 // Pages
-@import './pages/projectsIndex.scss';
+@import './pages/projects.scss';
 @import './pages/contact.scss';

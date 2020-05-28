@@ -1,33 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import T from 'i18n-react';
-import Helmet from 'react-helmet';
-import Layout from '../components/Layout/layout';
-import Link from '../components/Link/link';
-import '../styles/css/index.css';
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
-const NotFoundPage = ({ pageContext: { lang }, location: { pathname } }) => (
-    <Layout path={pathname}>
-        {T.setTexts(lang)}
-        <Helmet title={T.translate('e404.title')} />
-        <h1>{T.translate('e404.header')}</h1>
-        <p>{T.translate('e404.message')}</p>
-        <Link to="/">{T.translate('e404.link')}</Link>
-    </Layout>
-);
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Link from '../components/link'
 
-NotFoundPage.propTypes = {
-    pageContext: PropTypes.shape({
-        lang: PropTypes.shape({}),
-    }),
-    location: PropTypes.shape({
-        pathname: PropTypes.string,
-    }),
-};
+function NotFoundPage() {
+    const { t } = useTranslation('error404')
 
-NotFoundPage.defaultProps = {
-    pageContext: {},
-    location: {},
-};
+    return (
+        <Layout>
+            <SEO title={t('title')} />
+            <h1>{t('header')}</h1>
+            <p>{t('message')}</p>
+            <Link to="/">{t('link')}</Link>
+        </Layout>
+    )
+}
 
-export default NotFoundPage;
+export default NotFoundPage

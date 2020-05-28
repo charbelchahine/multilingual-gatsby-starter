@@ -1,3 +1,5 @@
-module.exports = {
+const projects = {
     title: 'Projects',
-};
+}
+
+export default projects

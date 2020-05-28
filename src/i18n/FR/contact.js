@@ -1,5 +1,6 @@
-module.exports = {
-    title: 'Nous Rejoindre',
-    header: 'Nous Rejoindre',
+const contact = {
+    title: 'Contactez moi',
     submit: 'Soumettre',
-};
+}
+
+export default contact

@@ -1,0 +1,17 @@
+$gridSpacing: 10px;
+
+.projectGrid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -$gridSpacing;
+}
+
+.projectCard {
+    width: calc(100% / 3 - 2 * #{$gridSpacing});
+    margin: $gridSpacing;
+    @include themed {
+        color: t(linkColor);
+        border-color: t(linkColor);
+        background-color: t(backgroundColor);
+    }
+}

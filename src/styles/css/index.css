@@ -302,6 +302,7 @@ body {
   overflow-x: hidden;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   max-width: 1400px;
+  padding: 0 30px;
   margin: 0 auto; }
   body.light-mode {
     color: #000000;
@@ -318,8 +319,7 @@ body {
 
 .content {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px; }
+  margin: 0 auto; }
 
 header {
   display: flex;
@@ -347,18 +347,21 @@ nav {
     flex: 1;
     display: flex;
     justify-content: flex-end; }
-  nav .navLogo.light-mode {
-    color: #000000; }
-  .light-mode nav .navLogo {
-    color: #000000; }
-  nav .navLogo.dark-mode {
-    color: #ffffff; }
-  .dark-mode nav .navLogo {
-    color: #ffffff; }
+  nav .navLogo {
+    max-width: 75px;
+    max-height: 75px; }
+    nav .navLogo.light-mode {
+      color: #000000; }
+    .light-mode nav .navLogo {
+      color: #000000; }
+    nav .navLogo.dark-mode {
+      color: #ffffff; }
+    .dark-mode nav .navLogo {
+      color: #ffffff; }
   nav .navIconButton:hover.light-mode {
-    background-color: rgba(36, 12, 109, 0.2); }
+    background-color: rgba(156, 156, 156, 0.2); }
   .light-mode nav .navIconButton:hover {
-    background-color: rgba(36, 12, 109, 0.2); }
+    background-color: rgba(156, 156, 156, 0.2); }
   nav .navIconButton:hover.dark-mode {
     background-color: rgba(255, 255, 255, 0.2); }
   .dark-mode nav .navIconButton:hover {
@@ -376,6 +379,17 @@ nav {
 .dark-mode .navPopper .navTooltip {
   color: #000000;
   background-color: #ffffff; }
+
+footer {
+  margin-top: 20px; }
+  footer a.light-mode {
+    color: #000000; }
+  .light-mode footer a {
+    color: #000000; }
+  footer a.dark-mode {
+    color: #ffffff; }
+  .dark-mode footer a {
+    color: #ffffff; }
 
 .drawer {
   width: 300px; }
@@ -408,29 +422,32 @@ nav {
 .langSelectorOptions .langSelectorItem:hover,
 .langSelectorOptions .langSelectorItem:focus {
   color: #000000;
-  background-color: rgba(36, 12, 109, 0.2); }
+  background-color: rgba(156, 156, 156, 0.2); }
 
 .projectGrid {
   display: flex;
   flex-wrap: wrap;
-  width: 100%; }
+  margin: -10px; }
 
 .projectCard {
-  max-width: 500px;
-  width: 100%;
-  margin: 20px; }
+  width: calc(100% / 3 - 2 * 10px);
+  margin: 10px; }
   .projectCard.light-mode {
     color: #000000;
-    border-color: #000000; }
+    border-color: #000000;
+    background-color: #ffffff; }
   .light-mode .projectCard {
     color: #000000;
-    border-color: #000000; }
+    border-color: #000000;
+    background-color: #ffffff; }
   .projectCard.dark-mode {
     color: #ffffff;
-    border-color: #ffffff; }
+    border-color: #ffffff;
+    background-color: #000000; }
   .dark-mode .projectCard {
     color: #ffffff;
-    border-color: #ffffff; }
+    border-color: #ffffff;
+    background-color: #000000; }
 
 .contactForm {
   display: flex;

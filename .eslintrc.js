@@ -22,4 +22,4 @@ module.exports = {
         'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
         'react/prefer-stateless-function': [1, { ignorePureComponents: true }],
     },
-};
+}
