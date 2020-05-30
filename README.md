@@ -91,7 +91,7 @@ In `/static/admin/confiq.yml`, the CMS can be configured. Right now, blog posts 
 
 | Audits              | Score |
 | ------------------- | ----: |
-| Performance         |   99% |
+| Performance         |  100% |
 | Progressive Web App |  100% |
 | Accessibility       |  100% |
 | Best Practices      |  100% |

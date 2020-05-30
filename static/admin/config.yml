@@ -5,13 +5,13 @@ backend:
 media_folder: src/assets/images
 public_folder: /assets/images
 
-display_url: https://mountaincentral.netlify.com
-# logo_url: https://mountaincentral.netlify.com/icons/netlify-cms-ui.svg
+display_url: https://mountaincentral.netlify.app
+logo_url: https://mountaincentral.netlify.app/admin/netlifycms-logo.svg/
 
 collections:
     - label: 'Projects (EN)' # Used in the UI
       name: 'projects_en' # Used in routes, e.g., /admin/collections/projects
-      folder: 'src/projects' # The path to the folder where the documents are stored
+      folder: 'src/projects/EN' # The path to the folder where the documents are stored
       create: true # Allow users to create new documents in this collection
       slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
       filter: { field: 'key', value: 'en' }
@@ -24,7 +24,7 @@ collections:
           - { label: 'Body', name: 'body', widget: 'markdown' }
     - label: 'Projects (FR)' # Used in the UI
       name: 'projects_fr' # Used in routes, e.g., /admin/collections/projects
-      folder: 'src/projects' # The path to the folder where the documents are stored
+      folder: 'src/projects/FR' # The path to the folder where the documents are stored
       create: true # Allow users to create new documents in this collection
       slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
       filter: { field: 'key', value: 'fr' }
