@@ -1,36 +1,26 @@
 module.exports = {
     siteMetadata: {
-        title: 'Mountain Central',
-        description: 'Mountain Central',
-        type: 'Person',
-        name: 'Mountain Central',
-        url: 'https://mountaincentral.netlify.com/',
-        sameAs: ['http://www.facebook.com/your-profile', 'http://www.twitter.com/yourProfile'],
-        facebookAppID: '',
-        twitterSiteID: '',
-        twitterUserID: '',
-        siteUrl: 'https://mountaincentral.netlify.com/',
+        title: `Mountain Central`,
+        description: `A simple starter to get up and developing quickly with Gatsby. It supports multiple languages, NetlifyCMS, styling with Sass, Material-UI components & dark mode`,
+        author: `Charbel Chahine`,
     },
     plugins: [
+        `gatsby-plugin-react-helmet`,
         {
-            resolve: 'gatsby-source-filesystem',
+            resolve: `gatsby-source-filesystem`,
             options: {
-                name: 'src',
+                name: `src`,
                 path: `${__dirname}/src/`,
             },
         },
-        {
-            resolve: `gatsby-plugin-netlify-cms-paths`,
-            options: {
-                cmsConfig: `/static/admin/config.yml`,
-            },
-        },
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
         {
             resolve: 'gatsby-transformer-remark',
             options: {
                 plugins: [
-                    'gatsby-remark-autolink-headers',
-                    `gatsby-plugin-netlify-cms-paths`,
+                    // 'gatsby-remark-autolink-headers',
+                    // `gatsby-plugin-netlify-cms-paths`,
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
@@ -44,33 +34,36 @@ module.exports = {
                 ],
             },
         },
-        'gatsby-plugin-catch-links',
-        'gatsby-transformer-sharp',
-        'gatsby-plugin-sharp',
-        'gatsby-plugin-react-helmet',
         {
-            resolve: 'gatsby-plugin-manifest',
+            resolve: `gatsby-plugin-manifest`,
             options: {
                 name: 'Mountain Central',
                 short_name: 'Mtn Central', // less than 12 characters
-                start_url: '/',
+                start_url: `/`,
                 background_color: '#0E283F',
-                theme_color: '#582644',
-                display: 'minimal-ui',
-                icon: 'static/icons/icon.png',
+                theme_color: '#0E283F',
+                display: `fullscreen`,
+                icon: `src/assets/images/maskable_icon.png`, // This path is relative to the root of the site.
+                icon_options: {
+                    // For all the options available, please see:
+                    // https://developer.mozilla.org/en-US/docs/Web/Manifest
+                    // https://w3c.github.io/manifest/#purpose-member
+                    purpose: `maskable`,
+                },
             },
         },
-        'gatsby-plugin-sitemap',
-        {
-            resolve: `gatsby-plugin-nprogress`,
-            options: {
-                color: `#575757`,
-                showSpinner: false,
-            },
-        },
-        'gatsby-plugin-offline',
+        // this (optional) plugin enables Progressive Web App + Offline functionality
+        // To learn more, visit: https://gatsby.dev/offline
+        `gatsby-plugin-offline`,
         'gatsby-plugin-sass',
-        'gatsby-plugin-netlify-cms',
+        {
+            resolve: 'gatsby-plugin-react-svg',
+            options: {
+                rule: {
+                    include: /assets/,
+                },
+            },
+        },
         {
             resolve: 'gatsby-plugin-use-dark-mode',
             options: {
@@ -80,13 +73,6 @@ module.exports = {
                 minify: true,
             },
         },
-        {
-            resolve: 'gatsby-plugin-react-svg',
-            options: {
-                rule: {
-                    include: /assets/,
-                },
-            },
-        },
+        `gatsby-plugin-netlify-cms`,
     ],
-};
+}

@@ -1,6 +1,6 @@
 const NavLinks = [
     {
-        id: 'home',
+        id: 'homepage',
         path: '/',
     },
     {
@@ -9,8 +9,8 @@ const NavLinks = [
     },
     {
         id: 'contact',
-        path: '/contact',
+        path: '/contact/',
     },
-];
+]
 
-export default NavLinks;
+export default NavLinks

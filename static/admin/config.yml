@@ -1,37 +1,37 @@
 backend:
-  name: git-gateway
-  branch: master
+    name: git-gateway
+    branch: master
 
 media_folder: src/assets/images
 public_folder: /assets/images
 
 display_url: https://mountaincentral.netlify.com
-logo_url: https://mountaincentral.netlify.com/icons/netlify-cms-ui.svg
+# logo_url: https://mountaincentral.netlify.com/icons/netlify-cms-ui.svg
 
 collections:
-  - label: "Projects (en)" # Used in the UI
-    name: "projects_en" # Used in routes, e.g., /admin/collections/projects
-    folder: "src/projects" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}.{{key}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    filter: {field: "key", value: "en"}
-    fields: # The fields for each document, usually in front matter
-      - {label: "Template", name: "template", widget: "hidden", default: "projects"}
-      - {label: "Key", name: "key", widget: "hidden", default: "en"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "date"}
-      - {label: "Featured Image", name: "image", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
-  - label: "Projects (fr)" # Used in the UI
-    name: "projects_fr" # Used in routes, e.g., /admin/collections/projects
-    folder: "src/projects" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}.{{key}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    filter: {field: "key", value: "fr"}
-    fields: # The fields for each document, usually in front matter
-      - {label: "Template", name: "template", widget: "hidden", default: "projects"}
-      - {label: "Key", name: "key", widget: "hidden", default: "fr"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "date"}
-      - {label: "Featured Image", name: "image", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
+    - label: 'Projects (EN)' # Used in the UI
+      name: 'projects_en' # Used in routes, e.g., /admin/collections/projects
+      folder: 'src/projects' # The path to the folder where the documents are stored
+      create: true # Allow users to create new documents in this collection
+      slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+      filter: { field: 'key', value: 'en' }
+      fields: # The fields for each document, usually in front matter
+          - { label: 'Template', name: 'template', widget: 'hidden', default: 'project' }
+          - { label: 'Key', name: 'key', widget: 'hidden', default: 'en' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Date', name: 'date', widget: 'date' }
+          - { label: 'Featured Image', name: 'image', widget: 'image' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+    - label: 'Projects (FR)' # Used in the UI
+      name: 'projects_fr' # Used in routes, e.g., /admin/collections/projects
+      folder: 'src/projects' # The path to the folder where the documents are stored
+      create: true # Allow users to create new documents in this collection
+      slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+      filter: { field: 'key', value: 'fr' }
+      fields: # The fields for each document, usually in front matter
+          - { label: 'Template', name: 'template', widget: 'hidden', default: 'project' }
+          - { label: 'Key', name: 'key', widget: 'hidden', default: 'fr' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Date', name: 'date', widget: 'date' }
+          - { label: 'Featured Image', name: 'image', widget: 'image' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }

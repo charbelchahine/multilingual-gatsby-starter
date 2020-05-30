@@ -1,0 +1,46 @@
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include themed {
+        color: t(linkColor);
+    }
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+    .navLHS {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .navRHS {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navLogo {
+        max-width: 75px;
+        max-height: 75px;
+        @include themed {
+            color: t(linkColor);
+        }
+    }
+    .navIconButton:hover {
+        @include themed {
+            background-color: t(linkFocus);
+        }
+    }
+}
+
+.navPopper {
+    .navTooltip {
+        @include themed {
+            color: t(backgroundColor);
+            background-color: t(linkColor);
+        }
+    }
+}

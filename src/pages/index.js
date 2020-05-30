@@ -1,30 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import T from 'i18n-react';
-import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import Layout from '../components/Layout/layout';
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
-import '../styles/css/index.css';
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Image from '../components/image'
 
-const seo = {
-    title: 'Mountain  Central',
-    description: 'That is a Gatsby Site hosted on Netlify',
-    class: 'homepage', // adds page specific styling
-};
+function IndexPage() {
+    const { t } = useTranslation('homepage')
 
-const headerImage = data => {
-    return data.homeHeader.childImageSharp.fluid;
-};
-
-const IndexPage = ({ pageContext: { lang }, location: { pathname }, data }) => (
-    <Layout path={pathname} seo={seo}>
-        {T.setTexts(lang)}
-        <Helmet title={T.translate('home.title')} />
-        <Img fluid={headerImage(data)} alt="Mountain Central" className="homeHeader" />
-        <section className="content">
-            <h1>{T.translate('home.welcome')}</h1>
+    return (
+        <Layout>
+            <SEO title={t('title')} />
+            <Image />
+            <h1>{t('welcome')}</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac purus imperdiet,
                 iaculis ipsum quis, egestas turpis. Nullam bibendum a ex at elementum. Praesent
@@ -38,40 +26,8 @@ const IndexPage = ({ pageContext: { lang }, location: { pathname }, data }) => (
                 nisl ligula, quis mattis arcu malesuada hendrerit. Proin mollis dolor vel diam
                 feugiat, a tristique libero placerat. Fusce egestas justo non viverra blandit.
             </p>
-        </section>
-    </Layout>
-);
+        </Layout>
+    )
+}
 
-IndexPage.propTypes = {
-    data: PropTypes.shape({}),
-    pageContext: PropTypes.shape({
-        lang: PropTypes.shape({}),
-    }),
-    location: PropTypes.shape({
-        pathname: PropTypes.string,
-    }),
-};
-
-IndexPage.defaultProps = {
-    pageContext: {},
-    location: {},
-    data: {},
-};
-
-export default IndexPage;
-
-export const queryIndex = graphql`
-    fragment fixedHomeHeader on File {
-        childImageSharp {
-            fluid(maxWidth: 1400, maxHeight: 555, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-            }
-        }
-    }
-
-    query IndexImages {
-        homeHeader: file(relativePath: { eq: "assets/images/homeHeader.png" }) {
-            ...fixedHomeHeader
-        }
-    }
-`;
+export default IndexPage
