@@ -3,6 +3,7 @@ backend:
   branch: master
 
 media_folder: src/assets/images
+public_folder: ../../assets/images/
 
 display_url: https://mountaincentral.netlify.app
 logo_url: https://mountaincentral.netlify.app/admin/netlifycms-logo.svg/
@@ -15,7 +16,6 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     identifier_field: slug # Used for slug creation
-    media_folder: '/src/assets/images'
     filter: { field: 'key', value: 'en' }
     fields: # The fields for each document, usually in front matter
       - { label: 'Template', name: 'template', widget: 'hidden', default: 'project' }
@@ -32,7 +32,6 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     identifier_field: slug # Used for slug creation
-    media_folder: '/src/assets/images'
     filter: { field: 'key', value: 'fr' }
     fields: # The fields for each document, usually in front matter
       - { label: 'Template', name: 'template', widget: 'hidden', default: 'project' }
