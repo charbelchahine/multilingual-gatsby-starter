@@ -2,11 +2,17 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: src/assets/images
-public_folder: ../../assets/images/
+media_folder: src/assets/images # Absolute path
+public_folder: ../../assets/images/ # Relative path from markdown file
 
+site_url: https://mountaincentral.netlify.app
 display_url: https://mountaincentral.netlify.app
 logo_url: https://mountaincentral.netlify.app/admin/netlifycms-logo.svg/
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
 
 collections:
   - label: 'Projects (EN)' # Used in the UI
@@ -15,7 +21,7 @@ collections:
     folder: 'src/projects/EN' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
-    identifier_field: slug # Used for slug creation
+    identifier_field: slug # Field used for slug creation
     filter: { field: 'key', value: 'en' }
     fields: # The fields for each document, usually in front matter
       - { label: 'Template', name: 'template', widget: 'hidden', default: 'project' }
@@ -31,7 +37,7 @@ collections:
     folder: 'src/projects/FR' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
-    identifier_field: slug # Used for slug creation
+    identifier_field: slug # Field used for slug creation
     filter: { field: 'key', value: 'fr' }
     fields: # The fields for each document, usually in front matter
       - { label: 'Template', name: 'template', widget: 'hidden', default: 'project' }
