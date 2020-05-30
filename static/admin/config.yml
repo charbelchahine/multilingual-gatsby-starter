@@ -1,37 +1,44 @@
 backend:
-    name: git-gateway
-    branch: master
+  name: git-gateway
+  branch: master
 
 media_folder: src/assets/images
-public_folder: /assets/images
 
-display_url: https://mountaincentral.netlify.com
-# logo_url: https://mountaincentral.netlify.com/icons/netlify-cms-ui.svg
+display_url: https://mountaincentral.netlify.app
+logo_url: https://mountaincentral.netlify.app/admin/netlifycms-logo.svg/
 
 collections:
-    - label: 'Projects (EN)' # Used in the UI
-      name: 'projects_en' # Used in routes, e.g., /admin/collections/projects
-      folder: 'src/projects' # The path to the folder where the documents are stored
-      create: true # Allow users to create new documents in this collection
-      slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
-      filter: { field: 'key', value: 'en' }
-      fields: # The fields for each document, usually in front matter
-          - { label: 'Template', name: 'template', widget: 'hidden', default: 'project' }
-          - { label: 'Key', name: 'key', widget: 'hidden', default: 'en' }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Date', name: 'date', widget: 'date' }
-          - { label: 'Featured Image', name: 'image', widget: 'image' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
-    - label: 'Projects (FR)' # Used in the UI
-      name: 'projects_fr' # Used in routes, e.g., /admin/collections/projects
-      folder: 'src/projects' # The path to the folder where the documents are stored
-      create: true # Allow users to create new documents in this collection
-      slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
-      filter: { field: 'key', value: 'fr' }
-      fields: # The fields for each document, usually in front matter
-          - { label: 'Template', name: 'template', widget: 'hidden', default: 'project' }
-          - { label: 'Key', name: 'key', widget: 'hidden', default: 'fr' }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Date', name: 'date', widget: 'date' }
-          - { label: 'Featured Image', name: 'image', widget: 'image' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: 'Projects (EN)' # Used in the UI
+    label_singular: 'Project'
+    name: 'projects_en' # Used in routes, e.g., /admin/collections/projects
+    folder: 'src/projects/EN' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    identifier_field: slug # Used for slug creation
+    media_folder: '../../assets/images/'
+    filter: { field: 'key', value: 'en' }
+    fields: # The fields for each document, usually in front matter
+      - { label: 'Template', name: 'template', widget: 'hidden', default: 'project' }
+      - { label: 'Key', name: 'key', widget: 'hidden', default: 'en' }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'date' }
+      - { label: 'Featured Image', name: 'image', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: 'Projects (FR)' # Used in the UI
+    label_singular: 'Project'
+    name: 'projects_fr' # Used in routes, e.g., /admin/collections/projects
+    folder: 'src/projects/FR' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    identifier_field: slug # Used for slug creation
+    media_folder: '../../assets/images/'
+    filter: { field: 'key', value: 'fr' }
+    fields: # The fields for each document, usually in front matter
+      - { label: 'Template', name: 'template', widget: 'hidden', default: 'project' }
+      - { label: 'Key', name: 'key', widget: 'hidden', default: 'fr' }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'date' }
+      - { label: 'Featured Image', name: 'image', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

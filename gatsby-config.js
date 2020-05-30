@@ -73,6 +73,11 @@ module.exports = {
                 minify: true,
             },
         },
-        `gatsby-plugin-netlify-cms`,
+        {
+            resolve: `gatsby-plugin-netlify-cms`,
+            options: {
+                htmlTitle: 'Mountain Central CMS',
+            },
+        },
     ],
 }
