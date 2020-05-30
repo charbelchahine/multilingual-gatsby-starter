@@ -9,13 +9,13 @@ logo_url: https://mountaincentral.netlify.app/admin/netlifycms-logo.svg/
 
 collections:
   - label: 'Projects (EN)' # Used in the UI
-    label_singular: 'Project'
+    label_singular: 'Project (EN)'
     name: 'projects_en' # Used in routes, e.g., /admin/collections/projects
     folder: 'src/projects/EN' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     identifier_field: slug # Used for slug creation
-    media_folder: '../../assets/images/'
+    media_folder: '/src/assets/images'
     filter: { field: 'key', value: 'en' }
     fields: # The fields for each document, usually in front matter
       - { label: 'Template', name: 'template', widget: 'hidden', default: 'project' }
@@ -26,13 +26,13 @@ collections:
       - { label: 'Featured Image', name: 'image', widget: 'image' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: 'Projects (FR)' # Used in the UI
-    label_singular: 'Project'
+    label_singular: 'Project (FR)'
     name: 'projects_fr' # Used in routes, e.g., /admin/collections/projects
     folder: 'src/projects/FR' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     identifier_field: slug # Used for slug creation
-    media_folder: '../../assets/images/'
+    media_folder: '/src/assets/images'
     filter: { field: 'key', value: 'fr' }
     fields: # The fields for each document, usually in front matter
       - { label: 'Template', name: 'template', widget: 'hidden', default: 'project' }
