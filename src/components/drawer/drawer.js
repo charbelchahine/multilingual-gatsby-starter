@@ -10,7 +10,7 @@ import Menu from '../../assets/svg/navIcons/menu.svg'
 const Drawer = () => {
     const { t } = useTranslation()
     const [openDrawer, setDrawerOpen] = useState(false)
-    const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
+    // const iOS = typeof window === 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent)
 
     const toggleDrawer = open => event => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -46,7 +46,6 @@ const Drawer = () => {
                     classes={{ root: 'navIconButton' }}
                     color="inherit"
                     onClick={toggleDrawer(true)}
-                    data-test="drawer-button"
                 >
                     <Menu />
                 </IconButton>
@@ -54,11 +53,10 @@ const Drawer = () => {
             <SwipeableDrawer
                 open={openDrawer}
                 classes={{ paper: 'drawer' }}
-                disableDiscovery={iOS}
+                disableDiscovery
                 onOpen={toggleDrawer(true)}
                 onClose={toggleDrawer(false)}
-                disableBackdropTransition={!iOS}
-                data-test="drawer-sidebar"
+                // disableBackdropTransition={!iOS}
             >
                 {mobileNavContents}
             </SwipeableDrawer>

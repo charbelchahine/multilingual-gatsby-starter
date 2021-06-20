@@ -1,5 +1,5 @@
 const contact = {
-    title: 'Contactez moi',
+    title: 'Contact',
     submit: 'Soumettre',
 }
 

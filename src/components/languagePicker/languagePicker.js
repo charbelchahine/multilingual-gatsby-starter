@@ -61,9 +61,8 @@ function LanguagePicker() {
                 {currentLanguages.map(lang => (
                     <MenuItem
                         key={lang.shorthand}
-                        classes={{ root: 'langSelectorItem' }}
-                        data-test={`languagePicker-option-${lang.shorthand}`}
                         data-value={lang.path}
+                        classes={{ root: 'langSelectorItem' }}
                         onClick={() => handleLangChange(lang)}
                     >
                         {lang.shorthand.toUpperCase()}

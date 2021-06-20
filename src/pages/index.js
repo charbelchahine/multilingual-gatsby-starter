@@ -1,17 +1,17 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Image from '../components/image'
 
 function IndexPage() {
     const { t } = useTranslation('homepage')
 
     return (
         <Layout>
-            <SEO title={t('title')} />
-            <Image />
+            <SEO title="homepage:title" />
+            <StaticImage src="../assets/images/homeHeader.png" alt={t('title')} />
             <h1>{t('welcome')}</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac purus imperdiet,

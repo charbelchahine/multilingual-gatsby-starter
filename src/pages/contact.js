@@ -11,7 +11,7 @@ function SecondPage() {
 
     return (
         <Layout>
-            <SEO title={t('title')} />
+            <SEO title="contact:title" />
             <h1>{t('title')}</h1>
             <section id="contactForm" className="content">
                 <form

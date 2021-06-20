@@ -14,8 +14,8 @@ $screen-lg-min: 960px;
 }
 
 // Custom breakpoint
-@mixin rwd($screen) {
-    @media (min-width: $screen+'px') {
+@mixin breakpoint($screen) {
+    @media (min-width: $screen) {
         @content;
     }
 }

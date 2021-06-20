@@ -16,7 +16,7 @@ const Projects = ({ data }) => {
         .map(edge => projectPreview(edge))
     return (
         <Layout>
-            <SEO title={t('title')} />
+            <SEO title="projects:title" />
             <h1>{t('title')}</h1>
             <div className="projectGrid">{Posts}</div>
         </Layout>
@@ -24,30 +24,27 @@ const Projects = ({ data }) => {
 }
 export default Projects
 
-export const pageQuery = graphql`
-    query {
-        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-            edges {
-                node {
-                    id
-                    excerpt(pruneLength: 250)
-                    frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
-                        slug
-                        title
-                        key
-                        image {
-                            childImageSharp {
-                                fluid(maxWidth: 1400) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                }
+export const pageQuery = graphql`{
+  allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+    edges {
+      node {
+        id
+        excerpt(pruneLength: 250)
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          slug
+          title
+          key
+          image {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
             }
+          }
         }
+      }
     }
+  }
+}
 `
 Projects.propTypes = {
     data: PropTypes.shape({

@@ -3,9 +3,8 @@ module.exports = {
         browser: true,
         node: true,
         es6: true,
-        jest: true,
     },
-    extends: ['airbnb', 'prettier', 'prettier/react'],
+    extends: ['airbnb', 'prettier'],
     globals: {
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
@@ -17,7 +16,7 @@ module.exports = {
         ecmaVersion: 2018,
         sourceType: 'module',
     },
-    plugins: ['react', 'jsx-a11y', 'prettier', 'jest'],
+    plugins: ['react', 'jsx-a11y', 'prettier'],
     rules: {
         'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
         'react/prefer-stateless-function': [1, { ignorePureComponents: true }],
