@@ -22,7 +22,6 @@ This is a gatsby starter, it supports multiple languages, NetlifyCMS, styling wi
 -   [react-i18next](https://react.i18next.com/) - Internationalization to obtain multilingual site
 -   [Sass](https://sass-lang.com) - for styling
 -   [Material-UI](https://material-ui.com) - React components based on Material Design
--   [Enzyme](https://enzymejs.github.io/enzyme/) & [Jest](https://jestjs.io) - for unit testing
 -   [ESLint](https://eslint.org) & [Prettier](https://prettier.io) - for code formatting
 
 ## Getting Started

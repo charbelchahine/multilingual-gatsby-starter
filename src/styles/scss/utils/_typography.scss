@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
-
 $thin: 100;
 $light: 300;
 $regular: 400;
@@ -26,9 +24,9 @@ $roboto: 'Roboto', 'Helvetica', 'Arial', sans-serif;
     @font-face {
         font-family: unquote($name) + $space-weight;
         font-display: swap;
-        src: url('/../../fonts/'+$name+$dash-weight+'.woff2') format('woff2'),
-            url('/../../fonts/'+$name+$dash-weight+'.woff') format('woff'),
-            url('/../../fonts/'+$name+$dash-weight+'.ttf') format('truetype');
+        src: url('/../../fonts/' + $name + $dash-weight + '.woff2') format('woff2'),
+            url('/../../fonts/' + $name + $dash-weight + '.woff') format('woff'),
+            url('/../../fonts/' + $name + $dash-weight + '.ttf') format('truetype');
     }
 }
 @mixin font($name) {

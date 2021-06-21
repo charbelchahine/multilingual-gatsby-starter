@@ -2,9 +2,21 @@ module.exports = {
     siteMetadata: {
         title: `Mountain Central`,
         description: `A simple starter to get up and developing quickly with Gatsby. It supports multiple languages, NetlifyCMS, styling with Sass, Material-UI components & dark mode`,
+        image: '/metaImages/default.png',
+        url: `https://mountaincentral.netlify.app`,
         author: `Charbel Chahine`,
     },
     plugins: [
+        `gatsby-plugin-image`,
+        {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+                defaults: {
+                    placeholder: "blurred",
+                },
+            },
+        },
+        `gatsby-transformer-sharp`,
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-source-filesystem`,
@@ -13,8 +25,6 @@ module.exports = {
                 path: `${__dirname}/src/`,
             },
         },
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
         {
             resolve: 'gatsby-transformer-remark',
             options: {
@@ -28,6 +38,7 @@ module.exports = {
                             // the content container as this plugin uses this as the
                             // base for generating different widths of each image.
                             maxWidth: 1200,
+                            linkImagesToOriginal: false,
                             backgroundColor: 'transparent', // required to display blurred image first
                         },
                     },
@@ -77,6 +88,15 @@ module.exports = {
             resolve: `gatsby-plugin-netlify-cms`,
             options: {
                 htmlTitle: 'Mountain Central CMS',
+            },
+        },
+        {
+            resolve: `gatsby-plugin-google-fonts`,
+            options: {
+                fonts: [
+                    `Roboto:100,300,400,500,700,900`, // you can also specify font weights and styles
+                ],
+                display: 'swap',
             },
         },
     ],

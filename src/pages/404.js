@@ -10,7 +10,7 @@ function NotFoundPage() {
 
     return (
         <Layout>
-            <SEO title={t('title')} />
+            <SEO title="error404:title" />
             <h1>{t('header')}</h1>
             <p>{t('message')}</p>
             <Link to="/">{t('link')}</Link>
